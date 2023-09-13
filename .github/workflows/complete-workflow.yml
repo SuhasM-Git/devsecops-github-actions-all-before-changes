@@ -20,7 +20,7 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
   security:
     runs-on: ubuntu-latest
-    #needs: Build
+    #needs: build
     name: Run the SCA scan on the source code
     steps:
       - uses: actions/checkout@master
@@ -37,7 +37,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: Main
+          ref: main
       - name: ZAP Scan
         uses: zaproxy/action-baseline@v0.6.1
         with:
